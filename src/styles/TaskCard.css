@@ -1,0 +1,115 @@
+.task-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background-color: #f8f9fa;
+}
+
+.task-card.important {
+    border-left: 6px solid #d32f2f;
+}
+
+.task-card.overdue {
+    background-color: #ffe6e6;
+    border-left: 6px solid #d32f2f;
+}
+
+.task-card strong {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.task-card p {
+    margin: 6px 0;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.task-card textarea,
+.task-card input,
+.task-card select {
+    width: 100%;
+    padding: 8px 12px;
+    margin: 8px 0 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-card textarea:focus,
+.task-card input:focus,
+.task-card select:focus {
+    border-color: #1976d2;
+    box-shadow: 0 0 4px rgba(25, 118, 210, 0.5);
+    outline: none;
+}
+
+.task-card button {
+    background-color: #1976d2;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: 8px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.task-card button:hover {
+    background-color: #115293;
+    transform: scale(1.05);
+}
+
+.task-card button:last-child {
+    background-color: #f44336;
+    color: white;
+}
+
+.task-card button:last-child:hover {
+    background-color: #d32f2f;
+}
+
+.task-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.task-card form label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.task-card form input,
+.task-card form textarea,
+.task-card form select {
+    font-size: 14px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.2s ease;
+}
+
+.task-card form input:focus,
+.task-card form textarea:focus,
+.task-card form select:focus {
+    border-color: #1976d2;
+    outline: none;
+}

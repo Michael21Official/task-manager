@@ -1,0 +1,138 @@
+.login-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px;
+    height: 100vh;
+    background-color: #f0f2f5;
+    /* Subtelne tło */
+    font-family: 'Roboto', Arial, sans-serif;
+    gap: 20px;
+}
+
+.login-form {
+    flex: 1;
+    max-width: 400px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.login-form h2 {
+    margin-top: 0;
+    font-size: 28px;
+    color: #333;
+    text-align: center;
+    font-weight: bold;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+.login-form input:focus {
+    border-color: #1976d2;
+    outline: none;
+    box-shadow: 0 0 4px rgba(25, 118, 210, 0.3);
+}
+
+.login-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.login-form button:hover {
+    background-color: #115293;
+    transform: scale(1.02);
+}
+
+.saved-boards {
+    flex: 1;
+    max-width: 400px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    overflow-y: auto;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.saved-boards:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.saved-boards h3 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    font-weight: bold;
+}
+
+.saved-boards ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.saved-boards ul li {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.saved-boards ul li span {
+    flex: 1;
+    font-size: 16px;
+    color: #555;
+    font-weight: 500;
+}
+
+.saved-boards ul li button {
+    padding: 10px 15px;
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.saved-boards ul li button:hover {
+    background-color: #115293;
+    transform: scale(1.05);
+}
+
+.saved-boards p {
+    color: #777;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 20px;
+}
