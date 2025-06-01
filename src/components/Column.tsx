@@ -62,6 +62,35 @@ export default function Column({ column, columns, setColumns, setDraggedTask }: 
         );
     };
 
+    const moveTaskToColumn = (taskId: string, newColumnId: string) => {
+        setColumns((prev) => {
+            let movedTask: Task | undefined;
+            // Usuń zadanie ze starej kolumny
+            const newColumns = prev.map((col) => {
+                if (col.id === column.id) {
+                    const filteredTasks = col.tasks.filter((task) => {
+                        if (task.id === taskId) {
+                            movedTask = { ...task, columnId: newColumnId };
+                            return false;
+                        }
+                        return true;
+                    });
+                    return { ...col, tasks: filteredTasks };
+                }
+                return col;
+            });
+            // Dodaj zadanie do nowej kolumny
+            if (movedTask) {
+                return newColumns.map((col) =>
+                    col.id === newColumnId
+                        ? { ...col, tasks: [...col.tasks, movedTask!] }
+                        : col
+                );
+            }
+            return newColumns;
+        });
+    };
+
     return (
         <>
             <button onClick={() => setIsModalOpen(true)}>+ Zadanie</button>
@@ -85,6 +114,7 @@ export default function Column({ column, columns, setColumns, setDraggedTask }: 
                             )
                         );
                     }}
+                    changeColumn={moveTaskToColumn} // Dodaj to!
                 />
             ))}
 

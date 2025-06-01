@@ -1,5 +1,6 @@
 {
   "name": "task-manager",
+  "homepage": "https://Michael21Official.github.io/task-manager",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,6 +13,7 @@
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.1",
     "chart.js": "^4.4.9",
+    "gh-pages": "^6.3.0",
     "js-cookie": "^3.0.5",
     "react": "^19.1.0",
     "react-chartjs-2": "^5.3.0",
@@ -25,7 +27,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

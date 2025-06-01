@@ -3,7 +3,7 @@ import { Task, TaskCardProps } from "../types";
 import ChangeColumn from "./ChangeColumn";
 import '../styles/TaskCard.css';
 
-const TaskCard = ({ task, updateTask, deleteTask, columns }: TaskCardProps) => {
+const TaskCard = ({ task, updateTask, deleteTask, columns, changeColumn }: TaskCardProps & { changeColumn: (taskId: string, newColumnId: string) => void }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [newTitle, setNewTitle] = useState(task.title);
     const [newDescription, setNewDescription] = useState(task.description || "");
@@ -82,10 +82,8 @@ const TaskCard = ({ task, updateTask, deleteTask, columns }: TaskCardProps) => {
                     <ChangeColumn
                         taskId={task.id}
                         columns={columns}
-                        currentColumnId={task.columnId || ""} // Przekazanie bieżącej kolumny
-                        changeColumn={(taskId, newColumnId) =>
-                            updateTask({ ...task, id: taskId, columnId: newColumnId })
-                        }
+                        currentColumnId={task.columnId || ""}
+                        changeColumn={changeColumn}
                     />
                     <button onClick={() => setIsEditing(true)}>Edytuj</button>
                     <button onClick={() => deleteTask(task.id)}>Usuń</button>

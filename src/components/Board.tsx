@@ -99,6 +99,18 @@ export default function Board({ boardData, onUpdateBoardData }: Props) {
         );
     };
 
+    const getPriorityStats = () => {
+        const stats = { low: 0, medium: 0, high: 0 };
+        columns.forEach(col => {
+            col.tasks.forEach(task => {
+                if (task.priority) {
+                    stats[task.priority]++;
+                }
+            });
+        });
+        return stats;
+    };
+
     return (
         <div className="board-container">
             <div className="tasks-container">
@@ -135,6 +147,12 @@ export default function Board({ boardData, onUpdateBoardData }: Props) {
                 <div className="stat-item">
                     <strong>Liczba ważnych zadań: </strong>
                     {getImportantTaskCount()}
+                </div>
+                <div className="stat-item">
+                    <strong>Zadania wg priorytetu:</strong>
+                    <div>Niski: {getPriorityStats().low}</div>
+                    <div>Średni: {getPriorityStats().medium}</div>
+                    <div>Wysoki: {getPriorityStats().high}</div>
                 </div>
 
                 <h4>Statystyki kolumn:</h4>
