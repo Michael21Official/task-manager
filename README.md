@@ -1,46 +1,73 @@
-# Getting Started with Create React App
+# Task Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Task Manager to aplikacja webowa do zarządzania zadaniami, napisana w React z TypeScriptem. Pozwala tworzyć, edytować, oznaczać jako ważne, przenosić między kolumnami oraz usuwać zadania. Dane użytkownika są zapisywane w cookies.
 
-## Available Scripts
+## Demo
 
-In the project directory, you can run:
+Aplikacja jest dostępna na GitHub Pages:  
+[https://Michael21Official.github.io/task-manager](https://Michael21Official.github.io/task-manager)
 
-### `npm start`
+## Funkcje
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Tworzenie i usuwanie kolumn (np. To Do, Working, Done)
+- Dodawanie, edycja i usuwanie zadań
+- Przenoszenie zadań między kolumnami (drag & drop lub przyciskiem)
+- Oznaczanie zadań jako ważne
+- Ustawianie deadline i priorytetu zadania
+- Statystyki zadań i kolumn
+- Przechowywanie danych w cookies (po zalogowaniu)
+- Obsługa wielu tablic użytkowników
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Instalacja
 
-### `npm test`
+1. Sklonuj repozytorium:
+   ```
+   git clone https://github.com/Michael21Official/task-manager.git
+   cd task-manager
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Zainstaluj zależności:
+   ```
+   npm install
+   ```
 
-### `npm run build`
+3. Uruchom aplikację lokalnie:
+   ```
+   npm start
+   ```
+   Aplikacja będzie dostępna pod adresem [http://localhost:3000](http://localhost:3000).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Deployment na GitHub Pages
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Upewnij się, że w pliku `package.json` jest pole:
+   ```json
+   "homepage": "https://Michael21Official.github.io/task-manager"
+   ```
+2. Zbuduj i opublikuj aplikację:
+   ```
+   npm run deploy
+   ```
+   Po chwili aplikacja będzie dostępna pod powyższym adresem.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Struktura projektu
 
-### `npm run eject`
+- `src/components` – komponenty React (Board, Column, TaskCard, ChangeColumn, Login)
+- `src/types.ts` – typy TypeScript dla zadań, kolumn, tablicy
+- `src/styles` – pliki CSS
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Technologie
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- React 19
+- TypeScript
+- js-cookie
+- uuid
+- chart.js + react-chartjs-2 (statystyki)
+- gh-pages (deploy)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Autor
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Projekt stworzony przez [Michael21Official](https://github.com/Michael21Official).
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Licencja:** MIT
